@@ -1,13 +1,13 @@
 <template lang="">
   <div>
-    <ClassicEasy />
+    <ClassicMud />
   </div>
 </template>
 <script>
-import ClassicEasy from '~/components/classics/ClassicEasy.vue'
+import ClassicMud from '~/components/classics/ClassicMud.vue'
 export default {
   components: {
-    ClassicEasy
+    ClassicMud
   }
 }
 </script>

@@ -1,8 +1,7 @@
 <template>
   <div class="sudoku-play-content">
     <div v-for="(item, index) in quareList" :key="index">
-      {{ item }}
-      <SudokuItem></SudokuItem>
+      <SudokuItem :data="item"></SudokuItem>
     </div>
   </div>
 </template>
@@ -16,6 +15,25 @@ export default {
   data() {
     return {
       quareList: new Array(9)
+    }
+  },
+  mounted() {
+    this.createArr()
+  },
+  methods: {
+    createArr() {
+      const arr = []
+      for (let j = 0; j < 9; j++) {
+        arr[j] = []
+        for (let i = 0; i < 9; i++) {
+          let number = Math.ceil(Math.random() * 9)
+          while (arr[j].includes(number)) {
+            number = Math.ceil(Math.random() * 9)
+          }
+          arr[j].push(number)
+        }
+      }
+      this.quareList = arr
     }
   }
 }

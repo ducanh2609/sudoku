@@ -1,16 +1,14 @@
 <template>
   <div class="sudoku-number-box">
-    <div v-for="(item, index) in quareList" :key="index" class="sudoku-number">
+    <div v-for="(item, index) in data" :key="index" class="sudoku-number">
       {{ item }}
     </div>
   </div>
 </template>
 <script>
 export default {
-  data() {
-    return {
-      quareList: new Array(9)
-    }
+  props: {
+    data: { type: Array, default: null }
   }
 }
 </script>
@@ -23,6 +21,8 @@ export default {
 
   .sudoku-number {
     border: 1px solid rgb(180, 178, 178);
+    font-size: 40px;
+    text-align: center;
 
     &:hover {
       cursor: pointer;
