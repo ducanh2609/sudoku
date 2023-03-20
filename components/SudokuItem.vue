@@ -1,6 +1,6 @@
 <template>
-  <div class="sudoku-number-box">
-    <div v-for="(item, index) in data" :key="index" class="sudoku-number">
+  <div v-if="data" class="sudoku-number-box">
+    <div v-for="(item, index) in data.numberList" :key="index" class="sudoku-number">
       {{ item }}
     </div>
   </div>
@@ -8,7 +8,7 @@
 <script>
 export default {
   props: {
-    data: { type: Array, default: null }
+    data: { type: Object, default: null }
   }
 }
 </script>
@@ -21,7 +21,7 @@ export default {
 
   .sudoku-number {
     border: 1px solid rgb(180, 178, 178);
-    font-size: 40px;
+    font-size: 35px;
     text-align: center;
 
     &:hover {
